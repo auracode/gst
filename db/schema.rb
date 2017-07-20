@@ -10,7 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170719104559) do
+ActiveRecord::Schema.define(version: 20170720132807) do
+
+  create_table "invoices", force: :cascade do |t|
+    t.string "invoice_number"
+    t.datetime "invoice_date"
+    t.string "billing_name"
+    t.text "billing_address"
+    t.integer "billing_state_code"
+    t.string "billing_gst"
+    t.string "shipping_name"
+    t.text "shipping_address"
+    t.integer "shipping_state_code"
+    t.string "shipping_gst"
+    t.text "description"
+    t.integer "quantity"
+    t.float "rate"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
